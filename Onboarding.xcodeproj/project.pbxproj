@@ -17,6 +17,9 @@
 		E926AC4B24F0C84600DE594C /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E926AC4A24F0C84600DE594C /* CustomTextField.swift */; };
 		E926AC4D24F0C98800DE594C /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E926AC4C24F0C98800DE594C /* AuthButton.swift */; };
 		E926AC4F24F0D0AF00DE594C /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E926AC4E24F0D0AF00DE594C /* DividerView.swift */; };
+		E926AC5124F0E05500DE594C /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E926AC5024F0E05500DE594C /* RegistrationViewController.swift */; };
+		E926AC5324F4130600DE594C /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E926AC5224F4130600DE594C /* ResetPasswordViewController.swift */; };
+		E926AC5524F41AB100DE594C /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E926AC5424F41AB100DE594C /* AuthenticationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		E926AC4A24F0C84600DE594C /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		E926AC4C24F0C98800DE594C /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		E926AC4E24F0D0AF00DE594C /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
+		E926AC5024F0E05500DE594C /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		E926AC5224F4130600DE594C /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		E926AC5424F41AB100DE594C /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				E926AC4624F0BCE900DE594C /* LoginViewController.swift */,
+				E926AC5024F0E05500DE594C /* RegistrationViewController.swift */,
+				E926AC5224F4130600DE594C /* ResetPasswordViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -98,6 +106,7 @@
 		E926AC4224F0BCB200DE594C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E926AC5424F41AB100DE594C /* AuthenticationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -200,9 +209,12 @@
 				E926AC4924F0BF2400DE594C /* Extensions.swift in Sources */,
 				E926AC4D24F0C98800DE594C /* AuthButton.swift in Sources */,
 				E926AC4724F0BCE900DE594C /* LoginViewController.swift in Sources */,
+				E926AC5124F0E05500DE594C /* RegistrationViewController.swift in Sources */,
+				E926AC5524F41AB100DE594C /* AuthenticationViewModel.swift in Sources */,
 				E926AC4B24F0C84600DE594C /* CustomTextField.swift in Sources */,
 				E926AC3024F0BC5F00DE594C /* ViewController.swift in Sources */,
 				E926AC2C24F0BC5F00DE594C /* AppDelegate.swift in Sources */,
+				E926AC5324F4130600DE594C /* ResetPasswordViewController.swift in Sources */,
 				E926AC4F24F0D0AF00DE594C /* DividerView.swift in Sources */,
 				E926AC2E24F0BC5F00DE594C /* SceneDelegate.swift in Sources */,
 			);

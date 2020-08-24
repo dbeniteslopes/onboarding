@@ -10,6 +10,12 @@ import UIKit
 
 class AuthButton: UIButton {
     
+    var title: String? {
+        didSet {
+            setTitle(title, for: .normal)
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -17,7 +23,6 @@ class AuthButton: UIButton {
         backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1).withAlphaComponent(0.5)
         setTitleColor(UIColor.white.withAlphaComponent(0.67), for: .normal)
         isEnabled = false
-        setTitle("Log In", for: .normal)
         heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
 

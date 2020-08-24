@@ -123,3 +123,16 @@ extension UIView {
 //        present(alert, animated: true, completion: nil)
 //    }
 //}
+
+extension UIViewController {
+    
+    func configureGradientBackground() {
+        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.barStyle = .black
+        
+        let gradient = CAGradientLayer()
+        gradient.colors = [UIColor.systemPurple.cgColor, UIColor.systemBlue.cgColor]
+        view.layer.insertSublayer(gradient, at: 0)
+        gradient.frame = view.frame
+    }
+}

@@ -39,6 +39,7 @@ class LoginViewController: UIViewController {
     
     private let loginButton: AuthButton = {
         let button = AuthButton(type: .system)
+        button.title = "Log In"
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return button
@@ -82,7 +83,7 @@ class LoginViewController: UIViewController {
         
         button.setAttributedTitle(attributedTitle, for: .normal)
         
-        button.addTarget(self, action: #selector(showForgotPassword), for: .touchUpInside)
+        button.addTarget(self, action: #selector(showRegistrationController), for: .touchUpInside)
         
         return button
     }()
@@ -92,18 +93,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureGradient()
+        configureGradientBackground()
         configureUI()
-    }
-    
-    func configureGradient() {
-        navigationController?.navigationBar.isHidden = true
-        navigationController?.navigationBar.barStyle = .black
-        
-        let gradient = CAGradientLayer()
-        gradient.colors = [UIColor.systemPurple.cgColor, UIColor.systemBlue.cgColor]
-        view.layer.insertSublayer(gradient, at: 0)
-        gradient.frame = view.frame
     }
     
     func configureUI() {
@@ -147,14 +138,16 @@ class LoginViewController: UIViewController {
     }
     
     @objc func showForgotPassword() {
-        print("forgot password button pressed")
+        let controller = ResetPasswordViewController()
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     @objc func handleGoogleLogin() {
         print("Handle google log in")
     }
     
-    @objc func signUpGoogleLogin() {
-        print("Handle sign up button")
+    @objc func showRegistrationController() {
+        let controller = RegistrationViewController()
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
