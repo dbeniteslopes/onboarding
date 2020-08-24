@@ -54,11 +54,14 @@ class RegistrationViewController: UIViewController {
         return button
     }()
     
+    private var viewModel = RegistrationViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configureGradientBackground()
         configureUI()
+        configureNotificationObservers()
     }
     
     func configureUI() {
@@ -90,11 +93,38 @@ class RegistrationViewController: UIViewController {
         ])
     }
     
+    func configureNotificationObservers() {
+        email.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        password.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        fullName.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+    }
+    
     @objc func handleSignUp() {
         
     }
     
     @objc func showLoginController() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func textDidChange(_ sender: UITextField) {
+        if sender == email {
+            viewModel.email = sender.text
+        } else if sender == password {
+            viewModel.password = sender.text
+        } else {
+            viewModel.fullname = sender.text
+        }
+        
+        updateForm()
+    }
+}
+
+extension RegistrationViewController: FormViewModel {
+    
+    func updateForm() {
+        signUpButton.isEnabled = viewModel.formIsValid
+        signUpButton.backgroundColor = viewModel.buttonBackgroundColor
+        signUpButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
     }
 }

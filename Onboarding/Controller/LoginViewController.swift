@@ -26,6 +26,8 @@ class LoginViewController: UIViewController {
         return stack
     }()
     
+    private var viewModel = LoginViewModel()
+    
     private let iconImage = UIImageView(image: #imageLiteral(resourceName: "firebase-logo"))
     
     private let email = CustomTextField(placeHolder: "Email")
@@ -95,6 +97,7 @@ class LoginViewController: UIViewController {
         
         configureGradientBackground()
         configureUI()
+        configureNotificationObservers()
     }
     
     func configureUI() {
@@ -132,6 +135,11 @@ class LoginViewController: UIViewController {
             signUpButton.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
         ])
     }
+
+    func configureNotificationObservers() {
+        email.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        password.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+    }
     
     @objc func handleLogin() {
         print("login button pressed")
@@ -149,5 +157,24 @@ class LoginViewController: UIViewController {
     @objc func showRegistrationController() {
         let controller = RegistrationViewController()
         navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc func textDidChange(_ sender: UITextField) {
+        if sender == email {
+            viewModel.email = sender.text
+        } else {
+            viewModel.password = sender.text
+        }
+        
+        updateForm()
+    }
+}
+
+extension LoginViewController: FormViewModel {
+    
+    func updateForm() {
+        loginButton.isEnabled = viewModel.formIsValid
+        loginButton.backgroundColor = viewModel.buttonBackgroundColor
+        loginButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
     }
 }
