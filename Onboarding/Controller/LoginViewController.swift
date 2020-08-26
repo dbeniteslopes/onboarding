@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
     
@@ -100,6 +101,9 @@ class LoginViewController: UIViewController {
     }
     
     func configureUI() {
+        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.barStyle = .black
+        
         configureGradientBackground()
         
         iconImage.translatesAutoresizingMaskIntoConstraints = false
@@ -143,7 +147,17 @@ class LoginViewController: UIViewController {
     }
     
     @objc func handleLogin() {
-        print("login button pressed")
+        guard let email = email.text else { return }
+        guard let password = password.text else { return }
+        
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            if let error = error {
+                print("DEBUG: Error signing in \(error.localizedDescription)")
+                return
+            }
+            
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     @objc func showForgotPassword() {
@@ -152,7 +166,7 @@ class LoginViewController: UIViewController {
     }
     
     @objc func handleGoogleLogin() {
-        print("Handle google log in")
+        
     }
     
     @objc func showRegistrationController() {

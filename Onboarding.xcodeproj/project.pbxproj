@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,7 @@
 		E926AC5124F0E05500DE594C /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E926AC5024F0E05500DE594C /* RegistrationViewController.swift */; };
 		E926AC5324F4130600DE594C /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E926AC5224F4130600DE594C /* ResetPasswordViewController.swift */; };
 		E926AC5524F41AB100DE594C /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E926AC5424F41AB100DE594C /* AuthenticationViewModel.swift */; };
+		E95D942424F6068A006FE7C5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95D942324F6068A006FE7C5 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		E926AC5024F0E05500DE594C /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		E926AC5224F4130600DE594C /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		E926AC5424F41AB100DE594C /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		E95D942324F6068A006FE7C5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +74,6 @@
 				057265B7EDA0F28D9C74C771 /* Pods-Onboarding.debug.xcconfig */,
 				E219641F1592164F4CA84627 /* Pods-Onboarding.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -127,6 +128,7 @@
 				E926AC4624F0BCE900DE594C /* LoginViewController.swift */,
 				E926AC5024F0E05500DE594C /* RegistrationViewController.swift */,
 				E926AC5224F4130600DE594C /* ResetPasswordViewController.swift */,
+				E95D942324F6068A006FE7C5 /* HomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -308,6 +310,7 @@
 				E926AC5324F4130600DE594C /* ResetPasswordViewController.swift in Sources */,
 				E926AC4F24F0D0AF00DE594C /* DividerView.swift in Sources */,
 				E926AC2E24F0BC5F00DE594C /* SceneDelegate.swift in Sources */,
+				E95D942424F6068A006FE7C5 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

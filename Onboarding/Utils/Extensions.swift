@@ -127,12 +127,9 @@ extension UIView {
 extension UIViewController {
     
     func configureGradientBackground() {
-        navigationController?.navigationBar.isHidden = true
-        navigationController?.navigationBar.barStyle = .black
-        
         let gradient = CAGradientLayer()
         gradient.colors = [UIColor.systemPurple.cgColor, UIColor.systemBlue.cgColor]
-        view.layer.insertSublayer(gradient, at: 0)
+        view.layer.addSublayer(gradient)
         gradient.frame = view.frame
     }
 }
