@@ -1,20 +1,19 @@
 //
 //  AppDelegate.swift
 //  Onboarding
-//
+///Users/diegobenites/Desktop/estudo/onboarding/onboarding/AppDelegate.swift
 //  Created by Diego Benites on 21/08/20.
 //  Copyright © 2020 Diego Benites Lopes. All rights reserved.
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        FirebaseApp.configure()
         return true
     }
 
@@ -34,4 +33,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-
