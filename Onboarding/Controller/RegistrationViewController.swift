@@ -59,12 +59,13 @@ class RegistrationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configureGradientBackground()
         configureUI()
         configureNotificationObservers()
     }
     
     func configureUI() {
+        configureGradientBackground()
+        
         iconImage.translatesAutoresizingMaskIntoConstraints = false
         fieldsStack.translatesAutoresizingMaskIntoConstraints = false
         signUpButton.translatesAutoresizingMaskIntoConstraints = false

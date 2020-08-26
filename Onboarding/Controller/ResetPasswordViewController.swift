@@ -37,15 +37,19 @@ class ResetPasswordViewController: UIViewController {
         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
         return button
     }()
+    
+    private var viewModel = ResetPasswordViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        configureGradientBackground()
         configureUI()
+        configureNotificationObservers()
     }
         
     func configureUI() {
+        configureGradientBackground()
+        
         iconImage.translatesAutoresizingMaskIntoConstraints = false
         fieldsStack.translatesAutoresizingMaskIntoConstraints = false
         resetPasswordButton.translatesAutoresizingMaskIntoConstraints = false
@@ -72,11 +76,32 @@ class ResetPasswordViewController: UIViewController {
         ])
     }
     
+    func configureNotificationObservers() {
+        email.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+    }
+    
     @objc func handleBackButton() {
         navigationController?.popViewController(animated: true)
     }
     
     @objc func handleResetPassword() {
         print("reset password button pressed")
+    }
+    
+    @objc func textDidChange(_ sender: UITextField) {
+        if sender == email {
+            viewModel.email = sender.text
+        }
+        
+        updateForm()
+    }
+}
+
+extension ResetPasswordViewController: FormViewModel {
+    
+    func updateForm() {
+        resetPasswordButton.isEnabled = viewModel.formIsValid
+        resetPasswordButton.backgroundColor = viewModel.buttonBackgroundColor
+        resetPasswordButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
     }
 }

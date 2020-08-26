@@ -95,12 +95,13 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureGradientBackground()
         configureUI()
         configureNotificationObservers()
     }
     
     func configureUI() {
+        configureGradientBackground()
+        
         iconImage.translatesAutoresizingMaskIntoConstraints = false
         fieldsStack.translatesAutoresizingMaskIntoConstraints = false
         loginButton.translatesAutoresizingMaskIntoConstraints = false
