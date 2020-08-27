@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6820577D4DF01A604A7DE3D5 /* Pods_Onboarding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D66D12D36DA4C249E04EDEC /* Pods_Onboarding.framework */; };
+		E906E13F24F741710027F0CB /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E906E13E24F741710027F0CB /* Service.swift */; };
 		E924640524F5F5E2006EED45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E924640424F5F5E1006EED45 /* GoogleService-Info.plist */; };
 		E926AC2C24F0BC5F00DE594C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E926AC2B24F0BC5F00DE594C /* AppDelegate.swift */; };
 		E926AC2E24F0BC5F00DE594C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E926AC2D24F0BC5F00DE594C /* SceneDelegate.swift */; };
@@ -29,6 +30,7 @@
 		057265B7EDA0F28D9C74C771 /* Pods-Onboarding.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Onboarding.debug.xcconfig"; path = "Target Support Files/Pods-Onboarding/Pods-Onboarding.debug.xcconfig"; sourceTree = "<group>"; };
 		7D66D12D36DA4C249E04EDEC /* Pods_Onboarding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Onboarding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E219641F1592164F4CA84627 /* Pods-Onboarding.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Onboarding.release.xcconfig"; path = "Target Support Files/Pods-Onboarding/Pods-Onboarding.release.xcconfig"; sourceTree = "<group>"; };
+		E906E13E24F741710027F0CB /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		E924640424F5F5E1006EED45 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E926AC2824F0BC5F00DE594C /* Onboarding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Onboarding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E926AC2B24F0BC5F00DE594C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		E926AC3F24F0BCAB00DE594C /* API */ = {
 			isa = PBXGroup;
 			children = (
+				E906E13E24F741710027F0CB /* Service.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E926AC4924F0BF2400DE594C /* Extensions.swift in Sources */,
+				E906E13F24F741710027F0CB /* Service.swift in Sources */,
 				E926AC4D24F0C98800DE594C /* AuthButton.swift in Sources */,
 				E926AC4724F0BCE900DE594C /* LoginViewController.swift in Sources */,
 				E926AC5124F0E05500DE594C /* RegistrationViewController.swift in Sources */,

@@ -105,24 +105,14 @@ class RegistrationViewController: UIViewController {
         guard let email = email.text else { return }
         guard let password = password.text else { return }
         guard let fullName = fullName.text else { return }
-        
-        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+     
+        Service.registerUserWithFirebase(withEmail: email, password: password, fullName: fullName) { (error, ref) in
             if let error = error {
-                print("DEBUG: Failed to create user with error: \(error.localizedDescription)")
+                print("DEBUG: Failed to sign up with Firebase \(error.localizedDescription)")
                 return
             }
             
-            guard let uid = result?.user.uid else { return }
-            let values = ["email": email, "fullName": fullName]
-            
-            Database.database().reference().child("users").child(uid).updateChildValues(values) { (error, ref) in
-                if let error = error {
-                    print("DEBUG: Failed to upload user data with error: \(error.localizedDescription)")
-                    return
-                }
-                
-                print("DEBUG: Successfuly created user and uploaded user info.")
-            }
+            self.dismiss(animated: true, completion: nil)
         }
     }
     

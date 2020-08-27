@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
 class LoginViewController: UIViewController {
     
@@ -98,6 +99,7 @@ class LoginViewController: UIViewController {
         
         configureUI()
         configureNotificationObservers()
+        configureGoogleSignIn()
     }
     
     func configureUI() {
@@ -146,11 +148,16 @@ class LoginViewController: UIViewController {
         password.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
     
+    func configureGoogleSignIn() {
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance()?.delegate = self
+    }
+    
     @objc func handleLogin() {
         guard let email = email.text else { return }
         guard let password = password.text else { return }
         
-        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+        Service.logUserIn(withEmail: email, password: password) { (result, error) in
             if let error = error {
                 print("DEBUG: Error signing in \(error.localizedDescription)")
                 return
@@ -166,7 +173,7 @@ class LoginViewController: UIViewController {
     }
     
     @objc func handleGoogleLogin() {
-        
+        GIDSignIn.sharedInstance()?.signIn()
     }
     
     @objc func showRegistrationController() {
@@ -191,5 +198,14 @@ extension LoginViewController: FormViewModel {
         loginButton.isEnabled = viewModel.formIsValid
         loginButton.backgroundColor = viewModel.buttonBackgroundColor
         loginButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
+    }
+}
+
+extension LoginViewController: GIDSignInDelegate {
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        Service.signInWithGoogle(didSignInFor: user) { (error, ref) in
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }
