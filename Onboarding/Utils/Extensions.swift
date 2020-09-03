@@ -96,34 +96,6 @@ extension UIView {
     }
 }
 
-//extension UIViewController {
-//    static let hud = JGProgressHUD(style: .dark)
-//
-//    func configureGradientBackground() {
-//        let gradient = CAGradientLayer()
-//        gradient.colors = [UIColor.systemPurple.cgColor, UIColor.systemBlue.cgColor]
-//        gradient.locations = [0, 1]
-//        view.layer.addSublayer(gradient)
-//        gradient.frame = view.frame
-//    }
-//
-//    func showLoader(_ show: Bool) {
-//        view.endEditing(true)
-//
-//        if show {
-//            UIViewController.hud.show(in: view)
-//        } else {
-//            UIViewController.hud.dismiss()
-//        }
-//    }
-//
-//    func showMessage(withTitle title: String, message: String) {
-//        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-//        present(alert, animated: true, completion: nil)
-//    }
-//}
-
 extension UIViewController {
     
     func configureGradientBackground() {
@@ -131,5 +103,24 @@ extension UIViewController {
         gradient.colors = [UIColor.systemPurple.cgColor, UIColor.systemBlue.cgColor]
         view.layer.addSublayer(gradient)
         gradient.frame = view.frame
+    }
+}
+
+extension UIColor {
+    
+    public convenience init(_ value: Int, alpha: CGFloat = 1.0) {
+        let red = CGFloat(value >> 16 & 0xff) / 255.0
+        let green = CGFloat(value >> 8 & 0xff) / 255.0
+        let blue = CGFloat(value & 0xff) / 255.0
+        
+        self.init(red: red, green: green, blue: blue, alpha: alpha)
+    }
+    
+    static var firstColor: UIColor {
+        .init(0x511845)
+    }
+    
+    static var secondColor: UIColor {
+        .init(0x900c3f)
     }
 }
